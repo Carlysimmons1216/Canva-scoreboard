@@ -2,10 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My Scoreboard Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Scoreboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+    .scoreboard-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    .score {
+      font-size: 48px;
+      color: #4CAF50;
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .increment {
+      background-color: #2196F3;
+      color: white;
+    }
+    .reset {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-  <h1>My Scoreboard is Online!</h1>
-  <p>This is a test page to confirm GitHub Pages is working.</p>
+  <div class="scoreboard-container">
+    <h1>My Scoreboard</h1>
+    <div class="score" id="score">0</div>
+    <button class="increment" onclick="incrementScore()">+1 Point</button>
+    <button class="reset" onclick="resetScore()">Reset</button>
+  </div>
+  <script>
+    let score = 0;
+    function incrementScore() {
+      score++;
+      document.getElementById('score').textContent = score;
+    }
+    function resetScore() {
+      score = 0;
+      document.getElementById('score').textContent = score;
+    }
+  </script>
 </body>
 </html>
+
